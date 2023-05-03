@@ -1,0 +1,41 @@
+.container {
+    max-width: 1472px;
+    margin: 0 auto;
+    display: block;
+    @include respond-to('desktop') {
+        max-width: 1240px;
+    }
+    @include respond-to('laptop') {
+        max-width: 980px;
+    }
+    @include respond-to('tablet') {
+        max-width: 100%;
+        padding: 0 32px;
+    }
+    @include respond-to('mobile') {
+        padding: 0 20px;
+    }
+
+    &_wide{
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 0 40px;
+
+        @include respond-to('mobile-sm'){
+            padding: 0 20px;
+        }
+    }
+
+    &_narrow{
+        max-width: 1224px;
+        margin: 0 auto;
+
+        @include respond-to('laptop'){
+            padding: 0 40px;
+        }
+
+        @include respond-to('mobile-sm'){
+            padding: 0  20px;
+        }
+    }
+}

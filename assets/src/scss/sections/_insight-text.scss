@@ -1,0 +1,31 @@
+.insight-text {
+    margin: 100px 0;
+    @include respond-to('tablet') {
+        margin: 50px 0;
+    }
+    &__container {
+        max-width: 976px;
+        margin: 0 auto;
+        p {
+            margin-bottom: 40px;
+            @include respond-to('mobile'){
+                margin-bottom: 32px;
+            }
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+        }
+    }
+    &_margin-140 {
+        margin: 140px 0;
+        @include respond-to('tablet'){
+            margin: 50px 0;
+        }
+    }
+    &_margin-280 {
+        margin: 280px 0;
+        @include respond-to('tablet'){
+            margin: 50px 0;
+        }
+    }
+}

@@ -1,0 +1,28 @@
+.big-text-section {
+    margin: 100px 0;
+    &__title {
+        font-size: 115px;
+        line-height: 1.21em;
+        margin: 0;
+        text-align: center;
+        @include respond-to('desktop') {
+            font-size: 100px;
+        }
+        @include respond-to('tablet') {
+            font-size: 36px;
+            text-align: left;
+        }
+    }
+    &_margin-140 {
+        margin: 140px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+    &_margin-280 {
+        margin: 280px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+}

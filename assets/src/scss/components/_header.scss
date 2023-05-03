@@ -1,0 +1,242 @@
+.header {
+    z-index: 100;
+    padding: 50px 60px 50px;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    transition: 0.3s all;
+    overflow: hidden;
+    opacity: 1;
+    transition: 0.3s all;
+    @include respond-to('laptop') {
+        padding: 30px 20px 30px;
+    }
+    @include respond-to('tablet') {
+        position: static;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-button {
+            display: none;
+            @include respond-to('tablet') {
+                flex-direction: column;
+                padding: 11px 14px;
+                line-height: 1.4em;
+                font-size: 20px;
+                transition: none;
+                color: $white;
+                pointer-events: auto;
+                display: flex;
+            }
+            &:after {
+                @include respond-to('tablet') {
+                    display: none;
+                }
+            }
+        }
+        .menu {
+            &__nav {
+                @include respond-to('tablet') {
+                    position: fixed;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    z-index: 100;
+                    right: 20px;
+                    bottom: 125px;
+                }
+            }
+            &-item {
+                margin: 0 27px;
+                @include respond-to('laptop') {
+                    margin: 0 13px;
+                }
+                @include respond-to('tablet') {
+                    padding: 11px 14px;
+                    min-width: 130px;
+                    background-color: $black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 27px;
+                    margin: 5px 0;
+                    position: static;
+                    right: -100%;
+                }
+                a {
+                    color: $black;
+                    text-decoration: none;
+                    position: relative;
+                    @include respond-to('tablet') {
+                        color: $white;
+                    }
+                    &:hover {
+                        &:after {
+                            -webkit-transform-origin: left;
+                            transform-origin: left;
+                            -webkit-transform: scaleX(1);
+                            transform: scaleX(1);
+                        }
+                    }
+                    &:after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: -.275em;
+                        left: 0;
+                        right: 0;
+                        transition: -webkit-transform .75s cubic-bezier(.19,1,.22,1);
+                        transition: transform .75s cubic-bezier(.19,1,.22,1);
+                        transition: transform .75s cubic-bezier(.19,1,.22,1),-webkit-transform .75s cubic-bezier(.19,1,.22,1);
+                        -webkit-transform: scaleX(0);
+                        transform: scaleX(0);
+                        -webkit-transform-origin: right;
+                        transform-origin: right;
+                        border-bottom: 1px solid $black;
+                        @include respond-to('tablet') {
+                            display: none;
+                        }
+                    }
+                }
+                &.current-menu-item {
+                    color: $gray;
+                    a {
+                        color: $gray;
+                        &:after {
+                            -webkit-transform-origin: left;
+                            transform-origin: left;
+                            -webkit-transform: scaleX(1);
+                            transform: scaleX(1);
+                            background-color: $gray;
+                        }
+                    }
+                    &:after {
+                        -webkit-transform-origin: left;
+                        transform-origin: left;
+                        -webkit-transform: scaleX(1);
+                        transform: scaleX(1);
+                        background-color: $gray;
+                    }
+                }
+            }
+        }
+    }
+    &__nav {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__logo {
+        width: 200px;
+        opacity: 1;
+        transition: 0.3s all;
+        &:after {
+            display: none;
+        }
+        @include respond-to('tablet') {
+            width: 160px;
+        }
+    }
+    &__button {
+        @include respond-to('tablet') {
+            display: none;
+        }
+    }
+    &__burger {
+        display: none;
+        @include respond-to('tablet') {
+            display: block;
+        }
+    }
+    &_sticky {
+        position: fixed;
+        width: 100%;
+        justify-content: center;
+        opacity: 0;
+        z-index: -1;
+        transition: 0.3s all;
+        .header {
+            &__menu {
+                &-button {
+                    display: flex;
+                }
+            }
+        }
+    }
+    &.active-menu {
+        .menu {
+            &__nav {
+            }
+            &-item {
+            }
+        }
+    }
+}
+
+.small-menu {
+    .header {
+        .burger {
+            bottom: 10px;
+            width: 45px;
+            height: 45px;
+            &:before,
+            &:after {
+                width: 28px;
+            }
+        }
+        .menu__nav {
+            bottom: 60px;
+        }
+        &__menu {
+            .menu-item,
+            .header__menu-button.btn {
+                padding: 4px 14px;
+                margin: 1px 0;
+            }
+            .header__menu-button.btn {
+                bottom: 80px;
+            }
+        }
+    }
+}
+
+.scroll {
+    .header {
+        opacity: 0;
+        transition: 0.3s all;
+        @include respond-to('tablet') {
+            opacity: 1;
+        }
+        &__button {
+
+        }
+        &__logo {
+
+        }
+        &__menu {
+            &-button {
+
+            }
+        }
+        &_sticky {
+            padding: 17px 60px 17px;
+            opacity: 1;
+            z-index: 100;
+            transition: 0.3s all;
+            @include respond-to('tablet') {
+                display: none;
+            }
+        }
+    }
+}

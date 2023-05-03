@@ -1,0 +1,240 @@
+.contact-details{
+    padding: 0;
+    background: rgba(255,255,255, 0);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 140px, rgba(255,0,0,0) 140px, rgba(255,0,0,0) 100%);
+    @include respond-to('mobile'){
+        background: rgba(255,255,255, 0);
+        background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 390px, rgba(255,0,0,0) 390px, rgba(255,0,0,0) 100%);
+    }
+    @include respond-to('tablet'){
+        padding: 0;
+    }
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+
+        @include respond-to('mobile'){
+            flex-direction: column;
+        }
+    }
+    &__linkedin{
+        width: 40px;
+        height: 40px;
+        background: $white;
+        border-radius: 40px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        transition-duration: .3s;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond-to('mobile-sm'){
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            right: 15px;
+        }
+
+        svg{
+            transition-duration: .3s;
+            @include respond-to('mobile-sm'){
+                max-width: 55%;
+            }
+        }
+
+        &:hover{
+            background: $black;
+            transition-duration: .3s;
+
+            svg{
+                transition-duration: .3s;
+
+                fill: $white;
+            }
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &__card{
+        min-width: 31.385869565%;
+        max-width: 31.385869565%;
+
+        @include respond-to('laptop'){
+            min-width: 40%;
+            max-width: 40%;
+        }
+
+        @include respond-to('mobile'){
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        &-img{
+            width: 100%;
+            height: 0;
+            padding-bottom: 150.217391304%;
+            position: relative;
+
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        &-info{
+            margin-top: 13px;
+            display: flex;
+            justify-content: space-between;
+            column-gap: 10px;
+
+            @include respond-to('mobile-sm'){
+                margin-top: 10px;
+            }
+        }
+
+        &-name{
+            font-size: 20px;
+            line-height: 27px;
+            margin: 0;
+
+            @include respond-to('laptop'){
+                font-size: 18px;
+            }
+
+            @include respond-to('mobile-sm'){
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+
+        &-position{
+            font-size: 20px;
+            line-height: 27px;
+            color: #848484;
+
+            @include respond-to('laptop'){
+                font-size: 18px;
+            }
+
+            @include respond-to('mobile-sm'){
+                font-size: 16px;
+                line-height: 21px;
+            }
+        }
+    }
+    &__info{
+        min-width: 57.880434782%;
+        max-width: 57.880434782%;
+        padding-top: 280px;
+
+        @include respond-to('mobile'){
+            padding-top: 100px;
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+    &__address{
+        font-size: 25px;
+        line-height: 40px;
+        font-weight: 500;
+
+        @include respond-to('mobile-sm'){
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+    &__divisions{
+        margin: 58px 0 140px;
+
+        @include respond-to('mobile-sm'){
+            margin: 50px 0 100px;
+        }
+    }
+    &__division{
+        margin-bottom: 74px;
+
+        @include respond-to('mobile-sm'){
+            margin-bottom: 50px;
+        }
+
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+    &__title{
+        margin-bottom: 8px;
+
+        @include respond-to('mobile-sm'){
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+    &__link{
+        margin: 0;
+
+        @include respond-to('mobile-sm'){
+            font-size: 26px;
+            line-height: 42px;
+        }
+
+        @include respond-to('mobile-ex-sm'){
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+        a{
+            display: inline-block;
+            font-size: 58px;
+            line-height: 75px;
+            text-decoration: none;
+            color: $black;
+            position: relative;
+
+            @include respond-to('laptop'){
+                font-size: 42px;
+                line-height: 54px;
+            }
+
+            @include respond-to('tablet'){
+                font-size: 36px;
+                line-height: 48px;
+            }
+
+            @include respond-to('mobile-sm'){
+                font-size: 26px;
+                line-height: 42px;
+            }
+
+            @include respond-to('mobile-ex-sm'){
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+    }
+    &__buttons{
+    }
+
+    &__btn{
+        &:first-of-type{
+            margin-right: 20px;
+        }
+
+        @include respond-to('mobile-sm'){
+            margin-bottom: 10px;
+            margin-right: 0;
+
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

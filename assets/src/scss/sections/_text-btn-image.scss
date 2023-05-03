@@ -1,0 +1,82 @@
+.text-btn-image {
+    margin: 100px 0;
+    @include respond-to('tablet'){
+        margin: 100px 0;
+    }
+    &__btn {
+        margin: 0 20px 0 0;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include respond-to('mobile'){
+            flex-direction: column;
+        }
+    }
+    &__title {
+        width: 75.5%;
+        @include respond-to('mobile'){
+            width: 100%;
+        }
+    }
+    &__content {
+        width: 1220px;
+        margin: 80px auto 60px;
+        @include respond-to('laptop'){
+            width: 100%;
+        }
+        @include respond-to('mobile'){
+            margin: 0 auto 30px;
+        }
+    }
+    &__tag {
+        width: 20%;
+        @include respond-to('mobile'){
+            width: 100%;
+            margin: 0 0 30px;
+        }
+    }
+    &__image-wrapper,
+    &__video-wrapper,
+    &__lottie-wrapper{
+        position: relative;
+        height: 0;
+        padding-bottom: 56.290849673%;
+        line-height: 0;
+        img, video, lottie-player, .lottie-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+    &__buttons {
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        @include respond-to('mobile') {
+            flex-direction: column;
+            row-gap: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+    &_margin-140 {
+        margin: 140px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+    &_margin-280 {
+        margin: 280px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+}

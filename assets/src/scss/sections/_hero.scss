@@ -1,0 +1,244 @@
+.hero {
+    background-color: $white;
+    padding: 75px 0 70px;
+    @include respond-to('tablet'){
+        padding: 36px 0 60px;
+    }
+    &__wrapper {
+        position: relative;
+    }
+    p,
+    &__content {
+        max-width: 852px;
+        margin: 0 0 50px;
+        @include respond-to('mobile'){
+            margin: 0 0 30px;
+        }
+        &:last-child {
+            margin: 0;
+        }
+        &-line {
+            overflow: hidden;
+        }
+    }
+    &__lottie {
+        top: -44px;
+        right: 0;
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        z-index: 0;
+        @include respond-to('laptop') {
+            width: 110px;
+            height: 110px;
+        }
+        @include respond-to('tablet') {
+            top: -120px;
+        }
+        lottie-player {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    &__title {
+        margin: 0;
+        &-wrap {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 60px;
+            @include respond-to('mobile') {
+                margin: 0 0 30px;
+            }
+        }
+        &:last-child {
+            margin: 0;
+        }
+        &-line {
+            overflow: hidden;
+            &:nth-child(even) {
+                text-align: right;
+                @include respond-to('mobile') {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    &__buttons {
+        @include respond-to('mobile') {
+            flex-direction: column;
+            row-gap: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+    h2,
+    &__subtitle {
+        line-height: 1.3em;
+        max-width: 1224px;
+        @include respond-to('mobile') {
+            font-size: 20px;
+            margin: 0 0 30px;
+        }
+        &:last-child {
+            margin: 0;
+        }
+    }
+    &__btn {
+        margin: 0 20px 0 0;
+    }
+    &__button {
+        &:after {
+            display: none;
+        }
+    }
+    &__logo {
+        &:after {
+            display: none;
+        }
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        &-icons {
+
+        }
+        &-text {
+            margin: 0 20px 0 0;
+            @include respond-to('tablet'){
+                display: none;
+            }
+        }
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__scroll {
+        @include respond-to('tablet'){
+            display: none;
+        }
+    }
+    &_social {
+        .hero {
+            &__title {
+                &-wrap {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+            }
+            &__lottie {
+                display: none;
+                @include respond-to('tablet'){
+                    display: block;
+                }
+            }
+        }
+    }
+    &_main {
+    }
+    &_jobs {
+        @include respond-to('tablet'){
+            padding: 36px 0 20px;
+        }
+        .hero {
+            &__lottie {
+                display: none;
+                @include respond-to('tablet'){
+                    display: block;
+                }
+            }
+        }
+    }
+    &_centered {
+        text-align: center;
+        @include respond-to('tablet'){
+            padding: 36px 0 10px;
+        }
+        .hero {
+            &__title {
+                font-size: 58px;
+                text-align: center;
+                margin: 0 auto 30px;
+                max-width: 1220px;
+                @include respond-to('tablet'){
+                    font-size: 36px;
+                }
+                &-line {
+                    text-align: center;
+                }
+            }
+            &__lottie {
+                display: none;
+                @include respond-to('mobile'){
+                    display: block;
+                }
+            }
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            margin: 0 auto 50px;
+            &:last-child {
+                margin: 0 auto;
+            }
+        }
+    }
+    &_single {
+        padding: 75px 0 140px;
+        @include respond-to('tablet'){
+            padding: 36px 0 60px;
+        }
+        .hero {
+            &__title {
+                &-wrap {
+                    //text-transform: uppercase;
+                    @include respond-to('mobile'){
+                        font-size: 36px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+            &__lottie {
+                display: none;
+                @include respond-to('mobile'){
+                    display: block;
+                }
+            }
+        }
+    }
+    &_archive {
+        padding: 75px 0 100px;
+        @include respond-to('tablet'){
+            padding: 36px 0 60px;
+        }
+    }
+    &_margin-140 {
+        padding: 75px 0 140px;
+        @include respond-to('tablet'){
+            padding: 36px 0 60px;
+        }
+    }
+    &_margin-280 {
+        padding: 75px 0 280px;
+        @include respond-to('tablet'){
+            padding: 36px 0 60px;
+        }
+    }
+    &+.text-btn {
+        margin-top: 0;
+        @include respond-to('tablet'){
+            margin-top: 0;
+        }
+    }
+    &+.image-video {
+        @include respond-to('tablet'){
+            padding: 0;
+        }
+    }
+}

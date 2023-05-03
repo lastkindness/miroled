@@ -1,0 +1,46 @@
+@import "fonts";
+@import "mixins";
+@import "vars";
+@import "typo";
+@import "grids";
+@import "modals";
+@import "general";
+
+@import "components/button";
+@import "components/menu";
+@import "components/burger";
+@import "components/social";
+@import "components/header";
+@import "components/footer";
+
+@import "sections/hero";
+@import "sections/text-btn";
+@import "sections/contact";
+@import "sections/home-projects";
+@import "sections/image-video";
+@import "sections/insights";
+@import "sections/logos";
+@import "sections/single-project-demos";
+@import "sections/similar-projects";
+@import "sections/single-project-details";
+@import "sections/lottie-fullscreen";
+@import "sections/text-image";
+@import "sections/design-team";
+@import "sections/projects";
+@import "sections/insights-filters";
+@import "sections/insight-text";
+@import "sections/contact-details";
+@import "sections/team-member-photo";
+@import "sections/team-member-description";
+@import "sections/text-page";
+@import "sections/buttons";
+@import "sections/not-found";
+@import "sections/big-text-section";
+@import "sections/text-btn-image";
+/**
+ *  Reset defaults
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+}

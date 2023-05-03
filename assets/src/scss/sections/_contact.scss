@@ -1,0 +1,128 @@
+.contact {
+    background-color: $bg-dark;
+    color: $light;
+    padding: 160px 0 220px;
+    @include respond-to('laptop'){
+        padding: 60px 0 80px;
+    }
+    &__item,
+    &__subtitle,
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__wrapper {
+        @include respond-to('laptop') {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+    &__content {
+
+    }
+    &__subtitle {
+        color: $light;
+    }
+    &__item {
+        font-size: 58px;
+        line-height: 1.29em;
+        font-weight: 500;
+        @include respond-to('laptop'){
+            font-size: 26px;
+        }
+        &:after {
+            display: none;
+        }
+    }
+    &__title {
+        color: $light;
+        margin: 0 0 110px;
+        font-size: 115px;
+        @include respond-to('laptop'){
+            font-size: 52px;
+            margin: 0 0 40px;
+        }
+        @include respond-to('mobile'){
+            font-size: 36px;
+        }
+    }
+    &__img {
+        width: 664px;
+        height: 443px;
+        margin-right: calc(((100vw - 1472px) / -2) + 40px);
+        @include respond-to('desktop') {
+            margin-right: calc(((100vw - 1240px) / -2) + 40px);
+        }
+        @include respond-to('laptop') {
+            width: 100%;
+            height: auto;
+            margin-right: 0;
+        }
+    }
+    &__lottie {
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 160px;
+        height: 160px;
+        z-index: 5;
+        @include respond-to('desktop-m') {
+            right: 0px;
+        }
+        @include respond-to('tablet') {
+            width: 110px;
+            height: 110px;
+            right: 10px;
+            top: -40px;
+        }
+        lottie-player {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+    &__images {
+        position: relative;
+        font-size: 0;
+        line-height: 0;
+        @include respond-to('laptop') {
+            margin-bottom: 40px;
+        }
+    }
+    &__subtitle {
+        margin: 0 0 30px;
+    }
+    &__list {
+        margin: 0 0 60px;
+        @include respond-to('laptop') {
+            margin: 0 0 50px;
+        }
+        a {
+            color: $light;
+            text-decoration: none;
+            transition: 0.3s all;
+            &:hover {
+                color: $gray;
+            }
+        }
+    }
+    &__buttons {
+        @include respond-to('laptop') {
+            display: none;
+        }
+        &_mobile {
+            display: none;
+            @include respond-to('laptop') {
+                flex-direction: column;
+                row-gap: 10px;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
+    }
+    &__btn {
+        margin: 0 20px 0 0;
+    }
+}

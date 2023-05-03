@@ -1,0 +1,59 @@
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &__item {
+        font-size: 20px;
+        color: $black;
+        border-radius: 50%;
+        border: 1px solid $black;
+        margin: 0 20px 0 0;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1em;
+        transition: 0.3s all;
+        text-decoration: none;
+        @include respond-to('mobile') {
+            margin: 0 10px 0 0;
+        }
+        &:after {
+            display: none;
+        }
+        &:last-child {
+            margin: 0;
+        }
+        &:hover {
+            border: 1px solid $gray;
+            transition: 0.3s all;
+        }
+    }
+    &_light {
+        .social {
+            &__item {
+                color: $white;
+                border: 1px solid $white;
+                &:hover {
+                    border: 1px solid $gray;
+                    transition: 0.3s all;
+                }
+            }
+        }
+    }
+    &_dark {
+        .social {
+            &__item {
+                color: $white;
+                border: 1px solid $black;
+                background-color: $black;
+                &:hover {
+                    border: 1px solid $black;
+                    transition: 0.3s all;
+                    color: $gray;
+                }
+            }
+        }
+    }
+}

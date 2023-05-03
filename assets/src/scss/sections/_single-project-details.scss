@@ -1,0 +1,330 @@
+.single-project-details {
+    background-color: $white;
+    padding: 0 0 70px;
+    //background-color: transparent;
+    @include respond-to('tablet'){
+        padding: 0 0 50px;
+    }
+    &__wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    &__title {
+        width: 32.61%;
+        @include respond-to('mobile'){
+            display: none;
+        }
+    }
+    &__table {
+        width: 66.3%;
+        @include respond-to('mobile'){
+            width: 100%;
+        }
+    }
+    &__tag {
+        color: $gray;
+        position: relative;
+        transition: 0.3s all;
+        margin: 0;
+        @include respond-to('mobile'){
+            margin: 0 0 10px;
+        }
+        &:hover {
+            &+.single-project-details__content {
+                .title {
+                    color: $black;
+                    transition: 0.3s all;
+                    &:after {
+                        transition: 0.3s all;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        text-align: right;
+        max-width: 74.59%;
+        @include respond-to('mobile'){
+            max-width: 100%;
+            text-align: left;
+            line-height: 1.5;
+        }
+        &:hover {
+            .title {
+                color: $black;
+                transition: 0.3s all;
+                &:after {
+                    transition: 0.3s all;
+                    width: 100% !important;
+                }
+            }
+        }
+        img {
+            object-fit: contain;
+            object-position: 50% 50%;
+            height: 110px;
+            margin-right: 50px;
+            @include respond-to('mobile'){
+                height: 82px;
+                margin-right: 38px;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        p {
+            margin: 0 0 30px;
+            &:last-child {
+                margin: 0;
+            }
+        }
+    }
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 40px 0;
+        border-bottom: 1px solid $gray;
+        cursor: pointer;
+        @include respond-to('mobile'){
+            padding: 30px 0;
+            flex-direction: column;
+        }
+        &:first-child {
+            padding: 0 0 40px;
+            @include respond-to('mobile'){
+                padding: 0 0 30px;
+            }
+        }
+        &:last-child {
+            border-bottom: none;
+            padding: 40px 0 0;
+            @include respond-to('mobile'){
+                padding: 30px 0 0;
+            }
+        }
+        &_hidden {
+            flex-direction: column;
+            align-items: flex-end;
+            overflow: hidden;
+            cursor: auto;
+            .single-project-details {
+                &__content {
+                    text-align: left;
+                    max-width: 100%;
+                    p {
+                        &:last-child {
+                            margin: 0 0 30px;
+                        }
+                    }
+                }
+                &__tag {
+                    cursor: pointer;
+                    &:after {
+                        transition: 0.3s all;
+                        display: block;
+                        width: 0%;
+                        content: '';
+                        height: 1px;
+                        background-color: $black;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
+                    &:hover {
+                        color: $black;
+                        transition: 0.3s all;
+                        &:after {
+                            transition: 0.3s all;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        &_img {
+            .single-project-details__content {
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+            }
+        }
+    }
+    &_accordion {
+        .single-project-details {
+            &__item {
+                flex-wrap: wrap;
+                align-items: center;
+                @include respond-to('mobile'){
+                    flex-direction: row;
+                }
+                &_hidden {
+                    width: 100%;
+                    font-size: 20px;
+                    cursor: auto;
+                    p,
+                    ul,
+                    ol {
+                        font-size: 20px;
+                    }
+                    p {
+                        color: $gray;
+                        margin: 30px 0 30px 100px;
+                        @include respond-to('mobile') {
+                           margin: 30px 0;
+                        }
+                    }
+                    &>ul {
+                        list-style-type: none;
+                        padding: 0;
+                        margin: 50px 0 30px;
+                        &>li {
+                            display: flex;
+                            align-items: flex-start;
+                            justify-content: space-between;
+                            margin: 30px 0;
+                            @include respond-to('mobile'){
+                                flex-direction: column;
+                            }
+                            &:first-child {
+                                margin: 0 0 30px;
+                            }
+                            &:last-child {
+                                margin: 30px 0 0;
+                            }
+                            div {
+                                &:first-child {
+                                    width: 20.88%;
+                                    @include respond-to('mobile'){
+                                        width: 100%;
+                                    }
+                                }
+                                &:last-child {
+                                    width: 65.53%;
+                                    color: $gray;
+                                    @include respond-to('mobile'){
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                            ul {
+                                margin: 0;
+                                padding: 0 0 0px 20px;
+                                list-style-type: none;
+                                line-height: 40px;
+                                li {
+                                    position: relative;
+                                    &:before {
+                                        content: '';
+                                        display: block;
+                                        width: 3px;
+                                        height: 3px;
+                                        border-radius: 50%;
+                                        background-color: $gray;
+                                        position: absolute;
+                                        left: -15px;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                    }
+                                }
+                            }
+                            p {
+                                margin: 0;
+                                line-height: 35px;
+                            }
+                        }
+                    }
+                }
+            }
+            &__table {
+                width: 75.5%;
+                @include respond-to('mobile'){
+                    width: 100%;
+                }
+            }
+            &__title {
+                width: 24.18%;
+            }
+            &__tag {
+                color: $black;
+                @include respond-to('mobile'){
+                    margin: 0;
+                }
+            }
+            &__content {
+                transition: 0.3s all;
+                color: $gray;
+                cursor: pointer;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                @include respond-to('mobile'){
+                    text-align: left;
+                    margin: 0 0 0 auto;
+                }
+                .title {
+                    position: relative;
+                    &:after {
+                        transition: 0.3s all;
+                        display: block;
+                        width: 0%;
+                        content: '';
+                        height: 1px;
+                        background-color: $black;
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                    }
+                }
+            }
+            &__wrapper {
+                justify-content: flex-end;
+            }
+        }
+    }
+    &_transparent {
+        background-color: transparent;
+    }
+    &_without-title {
+        .single-project-details {
+            &__title {
+                visibility: hidden;
+            }
+            &__wrapper {
+                justify-content: flex-end;
+            }
+        }
+    }
+    &_data {
+        .single-project-details {
+            &__tag {
+                width: 32%;
+                @include respond-to('mobile'){
+                    width: 100%;
+                }
+            }
+            &__content {
+                justify-content: space-between;
+                width: 65.53%;
+                @include respond-to('mobile'){
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &_margin-140 {
+        padding: 0 0 140px;
+        @include respond-to('tablet'){
+            padding: 0 0 50px;
+        }
+    }
+    &_margin-280 {
+        padding: 0 0 280px;
+        @include respond-to('tablet'){
+            padding: 0 0 100px;
+        }
+    }
+}

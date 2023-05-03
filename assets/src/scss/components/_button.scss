@@ -1,0 +1,74 @@
+a.btn,
+%btn,
+.btn,
+button {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    border-radius: 28px;
+    width: auto;
+    padding: 14px 20px;
+    font-size: 25px;
+    line-height: 1em;
+    transition: 0.3s all;
+    background-color: transparent;
+    border: 1px solid $black;
+    color: $black;
+    @include respond-to('mobile'){
+        //font-size: 20px;
+    }
+    &:hover {
+        background-color: $black;
+        color: $white;
+        transition: 0.3s all;
+    }
+    &:after {
+        display: none;
+    }
+    &:disabled {
+        opacity: 0.29;
+        box-shadow: unset;
+        pointer-events: none;
+        cursor: default;
+    }
+    &_dark {
+        background-color: $black;
+        color: $white;
+        &:hover {
+            opacity: 0.29;
+        }
+    }
+    &_light {
+        border: 1px solid $white;
+        color: $white;
+        &:hover {
+            border: 1px solid $gray;
+            background-color: $gray;
+        }
+    }
+}
+
+.buttons {
+    margin: 100px 0;
+    @include respond-to('tablet'){
+        margin: 100px 0;
+    }
+    &_margin-140 {
+        margin: 140px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+    &_margin-280 {
+        margin: 280px 0;
+        @include respond-to('tablet'){
+            margin: 100px 0;
+        }
+    }
+}
